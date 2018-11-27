@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Crystal Game</title>
+
+    
+    <style>
+    .gems{
+        display: inline;
+        }
+
+    img{width:230px;
+        padding: 5px;
+        }
+ 
+    img:hover{opacity: 0.8;
+
+    }
+
+    .score{clear:left;
+            padding-top: 5px;
+            }
+
+    body{background-image: url("assets/images/alteredimage.png")}
+
+    </style>
+
+</head>
+
+<body>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<h1>Welcome to the Crystal Collector Game!</h1>
+
+<h4>Click on each crystal to reveal its hidden value</h4>
+
+<div class="gems">
+    <img id="crystal1" src="assets/images/crystal 1.png">
+    <img id="crystal2" src="assets/images/crystal 2.png">
+    <img id="crystal3" src="assets/images/crystal 3.png">
+    <img id="crystal4" src="assets/images/crystal 4.png">
+</div>
+
+<br>
+
+<div class="score">
+    <p id="computerScore">Score to meet: </p>
+    <p id="crystalScore">Your Score: </p>
+    <p id="wins">Wins: </p>
+    <p id="losses">Losses: </p>
+</div>
+
+
+
+
+
+
+
+<!-- possible backgrounds
+<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by Freepik</a>
+<a href="https://www.shutterstock.com/image-vector/falling-gems-abstract-background-vector-illustration-548469979"></a>
+<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by Harryarts - Freepik.com</a> -->
+
+
+<!-- <a href="https://www.freepik.com/free-vector/diamonds-pattern-design_998551.htm">Designed by Akdesign</a> -->
+
+<!-- <a href="https://www.freepik.com/free-vector/vector-background-abstract-polygon-triangle_1306577.htm">Designed by Ikatod</a> -->
+
+<script src="assets/javascript/game.js"></script>
+
+</body>
+</html>
