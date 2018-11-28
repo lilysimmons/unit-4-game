@@ -1,11 +1,18 @@
 
-var wins = 0;
-var losses = 0;
+var wins = 1;
+var losses = 1;
 var counter = 0;
 
-// Randomly generated score to meet
+// Links to audio element
+var audioElementWin = document.createElement("audio");
+audioElementWin.setAttribute("src", "assets/Fairy Dust Sound Effect.mp3");
+
+var audioElementLose = document.createElement("audio");
+audioElementLose.setAttribute("src", "assets/glass-breaking-sound-effect.mp3");
+
+// Randomly generated number to meet
 var targetNumber = Math.floor(Math.random() * 120) + 19;
-$("#computerScore").text("Score to meet: " + targetNumber);
+$("#computerScore").text("Number to meet: " + targetNumber);
 
 
 // each image gets a randomized value attributed to it
@@ -15,117 +22,162 @@ $("#crystal3").attr("value", Math.floor(Math.random() * 12) + 1);
 $("#crystal4").attr("value", Math.floor(Math.random() * 12) + 1);
 
 
+// function to reset the game
+var resetGame = function(){
+
+    targetNumber = Math.floor(Math.random() * 120) + 19;
+    $("#computerScore").text("Number to meet: " + targetNumber);
+
+    $("#crystal1").attr("value", Math.floor(Math.random() * 12) + 1);
+    $("#crystal2").attr("value", Math.floor(Math.random() * 12) + 1);
+    $("#crystal3").attr("value", Math.floor(Math.random() * 12) + 1);
+    $("#crystal4").attr("value", Math.floor(Math.random() * 12) + 1);
 
 
+    counter = 0;
+    $("#crystalScore").text("Your collection: " + counter);
 
+}
+// function to capture the score
+var score = function(){
+    if (counter === targetNumber) {
+        audioElementWin.play();
+        alert("You win!");
+        $("#wins").text("Wins: " + wins++);
+        resetGame();
+  
+      }
+  
+      else if (counter >= targetNumber) {
+        audioElementLose.play();
+        alert("You lose!! Please try again.");
+        $("#losses").text("Losses: " + losses++);
+        resetGame();
+      }
 
-// logic for crystal1
+}
+
+// captures value for crystal1
 $("#crystal1").on("click", function() {
-var crystalValue = ($(this).attr("value"));
-crystalValue = parseInt(crystalValue);
-counter += crystalValue;
+    var crystalValue = ($(this).attr("value"));
+    crystalValue = parseInt(crystalValue);
+    counter += crystalValue;
+    $("#crystalScore").text("Your collection: " + counter);
+    score();
 
-
-
-$("#crystalScore").text("Your Score: " + counter);
 
 
     
 
-    if (counter === targetNumber) {
-      alert("You win!");
-      $("#wins").text("Wins: " + wins++);
+    // if (counter === targetNumber) {
+    //   alert("You win!");
+    //   $("#wins").text("Wins: " + wins++);
+    //   resetGame();
 
-    }
+    // }
 
-    else if (counter >= targetNumber) {
-      alert("You lose!!");
-      $("#losses").text("Losses: " + losses++);
-    }
+    // else if (counter >= targetNumber) {
+    //   alert("You lose!! Please try again.");
+    //   $("#losses").text("Losses: " + losses++);
+    //   resetGame();
+    // }
    
 
 });
 
-// logic for crystal2
+// captures value for crystal2
 $("#crystal2").on("click", function() {
     var crystalValue = ($(this).attr("value"));
     crystalValue = parseInt(crystalValue);
     counter += crystalValue;
-    
-    
-    
-    $("#crystalScore").text("Your Score: " + counter);
+    $("#crystalScore").text("Your collection: " + counter);
+    score();
     
     
         
     
-        if (counter === targetNumber) {
-          alert("You win!");
-          $("#wins").text("Wins: " + wins++);
-        }
+        // if (counter === targetNumber) {
+        //   alert("You win!");
+        //   $("#wins").text("Wins: " + wins++);
+        //   resetGame();
+        // }
     
-        else if (counter >= targetNumber) {
-          alert("You lose!!");
-          $("#losses").text("Losses: " + losses++);
-        }
+        // else if (counter >= targetNumber) {
+        //   alert("You lose!! Please try again.");
+        //   $("#losses").text("Losses: " + losses++);
+        //   resetGame();
+        // }
        
     
     });
 
 
-// logic for crystal3
+// captures for crystal3
     $("#crystal3").on("click", function() {
         var crystalValue = ($(this).attr("value"));
         crystalValue = parseInt(crystalValue);
         counter += crystalValue;
-        
-        
-        
-        $("#crystalScore").text("Your Score: " + counter);
+        $("#crystalScore").text("Your collection: " + counter);
+        score();
         
         
             
         
-            if (counter === targetNumber) {
-              alert("You win!");
-              $("#wins").text("Wins: " + wins++);
-            }
+            // if (counter === targetNumber) {
+            //   alert("You win!");
+            //   $("#wins").text("Wins: " + wins++);
+            //   resetGame();
+            // }
         
-            else if (counter >= targetNumber) {
-              alert("You lose!!");
-              $("#losses").text("Losses: " + losses++);
-            }
+            // else if (counter >= targetNumber) {
+            //   alert("You lose!! Please try again.");
+            //   $("#losses").text("Losses: " + losses++);
+            //   resetGame();
+            // }
            
         
         });
 
-// logic for crystal4
+// captures value for crystal4
         $("#crystal4").on("click", function() {
             var crystalValue = ($(this).attr("value"));
             crystalValue = parseInt(crystalValue);
             counter += crystalValue;
-            
-            
-            
-            $("#crystalScore").text("Your Score: " + counter);
+            $("#crystalScore").text("Your collection: " + counter);
+            score();
             
             
                 
             
-                if (counter === targetNumber) {
-                  alert("You win!");
-                  $("#wins").text("Wins: " + wins++);
-                }
+                // if (counter === targetNumber) {
+                //   alert("You win!");
+                //   $("#wins").text("Wins: " + wins++);
+                //   resetGame();
+                // }
             
-                else if (counter >= targetNumber) {
-                  alert("You lose!!");
-                  $("#losses").text("Losses: " + losses++);
-                }
+                // else if (counter >= targetNumber) {
+                //   alert("You lose!! Please try again.");
+                //   $("#losses").text("Losses: " + losses++);
+                //   resetGame();
+                // }
                
             
             });
 
 
+    
+//  // Gets Link for Theme Song
+//  var audioElement = document.createElement("audio");
+//  audioElement.setAttribute("src", "assets/captainplanet24.mp3");
+
+//  // Theme Button
+//  $(".theme-button").on("click", function() {
+//    audioElement.play();
+//  });
+//  $(".pause-button").on("click", function() {
+//    audioElement.pause();
+//  });
+   
 
 // $("#crystalScore").text("Your score: " + userSum);
     

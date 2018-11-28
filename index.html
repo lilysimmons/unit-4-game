@@ -7,7 +7,9 @@
     
     <style>
     .gems{
-        display: inline;
+        float: left;
+        margin-left: 40px;
+        width: 100%;
         }
 
     img{width:230px;
@@ -24,6 +26,12 @@
 
     body{background-image: url("assets/images/alteredimage.png")}
 
+    h1{color: rgba(2, 58, 122, 0.986); text-align: center;}
+
+    h4{color: rgba(2, 58, 122, 0.986); text-align: center;}
+
+    p{color:rgba(2, 58, 122, 0.986); font-weight: bold; text-align:center;}
+
     </style>
 
 </head>
@@ -35,7 +43,7 @@
 
 <h1>Welcome to the Crystal Collector Game!</h1>
 
-<h4>Click on each crystal to reveal its hidden value</h4>
+<h4>Each crystal has a hidden value. Click on a crystal to add to your collection. Try to meet the given number. Refresh the page to clear the score. Good luck!</h4>
 
 <div class="gems">
     <img id="crystal1" src="assets/images/crystal 1.png">
@@ -47,8 +55,8 @@
 <br>
 
 <div class="score">
-    <p id="computerScore">Score to meet: </p>
-    <p id="crystalScore">Your Score: </p>
+    <p id="computerScore">Number to meet: </p>
+    <p id="crystalScore">Your collection: </p>
     <p id="wins">Wins: </p>
     <p id="losses">Losses: </p>
 </div>
